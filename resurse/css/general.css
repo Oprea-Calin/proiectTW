@@ -1,0 +1,460 @@
+html{
+    font-size: 18px;
+}
+
+body{
+    --culoare1: #FCB9AC;
+    --culoare2: #c300ff;
+    --culoare3: #E8ACFC;
+    --culoare4: #DE9897;
+    --spatiere-pagina: 40px;
+    --padding-section: 15px;
+    --culoare5:#C886FF;
+    --culoare6:#9377FA;
+    --culoare7:#6644e1;
+    --albastru1:#2f00ff;
+    --culoare-background:#ecd577;
+    --albastru1:#020088;
+}
+
+body{
+    background-color: var(--culoare-background);
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);
+    min-width: 450px;
+    margin: 0;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+#grid-pagina > *{
+    border: 3px solid var(--albastru1); 
+    padding:var(--padding-section)
+}
+
+#grid-pagina{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas: "z-welcome z-welcome z-welcome z-welcome"
+                        "z-prezentare z-prezentare z-prezentare z-prezentare"
+                        "z-lista-utilizatori z-date-utilizatori-statistica z-date-utilizatori-statistica z-date-site-server"
+                        "z-calendar z-calendar z-tabel z-tabel"
+                        "z-anunturi z-anunturi z-tabel z-tabel"
+                        "z-diverse z-diverse z-diverse z-diverse"
+                        "z-footer z-footer z-footer z-footer"
+                        ;
+    gap: 20px 10px; /* spatiere intre griduri */
+
+}
+#welcome{
+    grid-area: z-welcome;
+}
+
+#prezentare{
+    grid-area: z-prezentare;
+}
+
+#promotii{
+    grid-area: z-tabel;
+}
+
+#calendar{
+    grid-area: z-calendar;
+}
+
+#anunturi{
+    grid-area: z-anunturi;
+}
+
+#list-utilizatori{
+    grid-area: z-utilizatori;
+}
+
+#intrebari{
+    grid-area: z-date-utilizatori-statistica;
+}
+
+#date-site-server{
+    grid-area: z-date-site-server;
+}
+
+#diverse{
+    grid-area: z-diverse ;
+}
+
+#footer{
+    grid-area: z-footer;
+}
+
+img{
+    width:100%;
+    max-width:800px;
+}
+
+#outer1 {
+    position: fixed;
+    border: 5px solid #800080;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    width: 55px;
+    height: 55px;
+    right: 25px;
+    bottom: 25px;
+    box-shadow: inset 0px 0 10px 5px rgba(0, 0, 0, 0.5);
+    
+
+}
+
+#inner1 {
+    font-size: 80px;    
+    margin:auto;
+    margin-left:-4px;
+    margin-top: -35px;
+}
+
+#outer1:hover #inner1 {
+    transform: scale(1.1);
+    color: var(--culoare2);
+    transition: all 0.5s linear;
+}
+
+#outer1:hover {
+    background-color: var(--culoare2);
+    transition: all 0.5s linear;
+}
+
+#back-to-top1 {
+    color: var(--albastru1);
+    text-decoration: none;
+}
+
+#welcome{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#header, #footer{
+    font-family: 'Courier New', Courier, monospace;
+    border: 3px solid var(--albastru1);
+    text-align: center;
+    border-radius: 50%;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+
+#sigla{
+    text-decoration: none;
+    color: solid black;
+}
+
+.arrow {
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s linear;
+    position: absolute;
+    left: 5px;
+    
+}
+
+a:hover .arrow {
+    opacity: 1;
+    display: block;
+    transform: translateX(70%);
+}
+
+@media print {
+
+    #banner {
+        display: block;
+        border: 4px solid black;
+        height: 30px;
+        width: 70%;
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    img,
+    video,
+    #descarca
+    iframe,
+    #outer1,
+    #inner1,
+    link,
+    .taburi-iframe,
+    #container,
+    .btn-group,
+    .container-iframe,
+    figcaption,
+    #descarca{
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 50%;
+    }
+
+    nav{
+        page-break-after: always;
+    }
+
+    ul.meniu{
+        all: unset !important;
+    }
+
+    #header{
+        border: none;
+    }
+    #footer{
+        page-break-before: always;
+        border: none;
+    }
+
+    #watermark
+    {
+        display: block;
+        position: fixed;
+        bottom:0;
+        color:rgba(0,0,0,0.4);
+        right:0;
+    }
+
+    #watermark::after{
+        
+        opacity:0.4;
+        padding:5px;
+        display: block;
+        background: white;
+        border:2px solid black;
+        border-top-left-radius:10px;
+        border-bottom-left-radius:10px;
+        border-right:none;
+        content:"Saicu Carina";
+    }
+
+    #grid-pagina{
+        display: block;
+    }
+
+    #diverse{
+        display: none;
+    }
+    
+    @page {
+        size: A4 portrait;
+        margin-bottom:2cm;
+        margin-top:2cm;
+        counter-increment: page;
+            
+    }
+    
+    @page:left{
+    
+        margin-left:3cm;
+        margin-right:1cm;
+        border-radius: 20cm;
+    }
+    
+    @page:right{
+    
+        margin-right:3cm;
+        margin-left:1cm;
+    }
+
+    #welcome{
+        border: none;
+
+    }
+    
+    #prezentare{
+        border: none;
+
+    }
+    
+    #promotii{
+        border: none;
+
+    }
+    
+    #calendar{
+        border: none;
+
+    }
+    
+    #anunturi{
+        border: none;
+
+    }
+    
+    #lista-utilizatori{
+        border: none;
+
+    }
+    
+    #intrebari{
+        border: none;
+
+    }
+    
+    #date-site-server{
+        border: none;
+
+    }
+    
+    #diverse{
+        border: none;
+
+    }
+    
+    #footer{
+        border: none;
+
+    }
+    
+}
+
+div{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0%;
+    background-blend-mode: lighten;
+}
+
+div.link:hover{
+    background-size: 10%;
+    color: var(--culoare-background);
+    background-image: radial-gradient(
+                                     var(--culoare3) 40%,
+                                     var(--culoare-background) 80%,
+                                     var(--culoare-background) 100%);
+    transition: all 1s linear;
+    
+}
+
+div.link:visited{
+    color: var(--culoare-background);
+}
+
+div.link:active {
+    border: 1px solid var(--culoare6);
+    transition: all 0.5s linear;
+}
+
+a.link[href^="http"]::before{
+    content: "⮳";
+    font-size:1.5em;
+}
+
+a.link[href^="http"]:hover::before{
+    color: var(--culoare6);
+    transition: color 0.3s linear;
+}
+
+video {
+    max-width: 700px;
+    max-height: 350px;
+    width: auto;
+    height: auto;
+    min-height: 200px;
+    min-width: 250px;
+}
+
+::cue {
+    background-color: white; /*rgba(255, 255, 255, 0.3);*/
+    opacity: 0.3;
+}
+
+::cue {
+    color: black;
+}
+
+#relexie {
+    width: fit-content;
+
+  }
+  
+#reflexie {
+    content: "";
+    left: 180px;
+    right: 0;
+    z-index: -1;
+    transform: scaleY(-1);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    rotate: 195deg;
+    margin-bottom: 2cm;
+    margin-right: 21cm;
+  }
+
+.reflex:hover{
+    color: var(--albastru1);
+    transition: color 0.3s linear;
+}
+
+#reflexie:hover{
+    color: var(--albastru1) !important;
+    transition: color 0.3s linear;
+}
+  
+#fara-relexie {
+    rotate:-15deg;
+    margin-bottom: 2cm;
+}
+
+
+hr {
+    height: 50px;
+    border-radius: 5px;
+    background-image: radial-gradient(white 10%, var(--albastru1) 35%, transparent 10%),
+        radial-gradient(white 10%, var(--albastru1) 35%, transparent 10%),
+        radial-gradient(white 10%, var(--albastru1) 35%, transparent 10%);
+    background-size: 16px 16px;
+    background-repeat: repeat-x;
+    position: relative;
+    border: 0;
+    filter: blur(0.4px);
+}
+
+hr::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background-image: radial-gradient(white 1%, var(--albastru1) 55%, transparent 1%);
+    background-size: 16px 16px;
+    background-repeat: repeat-x;
+    background-position-x: 12px;
+    top: 8%;
+    filter: blur(0.6px);
+}
+
+hr::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background-image: radial-gradient(white 10%, var(--albastru1) 35%, transparent 30%);
+    background-size: 16px 16px;
+    background-repeat: repeat-x;
+    top: 15%;
+    background-position-x: -10px;
+    filter: blur(0.4px);
+}
+  

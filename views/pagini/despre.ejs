@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!--document de tip html-->
+<html lang="ro"> <!--am setat limba romana-->
+ <head>
+
+   <title>Raftul comun</title>
+
+  <meta name="keywords" content="carte, bestseller, carti, nou, volum, serie, romantic, actiune, horror, istorie, fictiune, educational, copii"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
+  <meta name="description" content="Carti online, Audiobook-uri, promotii, cele mai bune preturi"><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+
+  <%- include("../fragmente/head.ejs") %>
+
+
+ </head>
+
+ <body>
+
+  <%- include("../fragmente/header.ejs") %>
+<main>
+
+    <h3>Pagina noua!</h3>
+
+</main>
+
+<hr>
+
+<section id="despre">
+
+  <video controls poster="/resurse/imagini/pornire.png" preload="metadata">
+    <source src="/resurse/video/video.mp4" type="video/mp4">
+    <source src="/resurse/video/video.ogv" type="video/ogv">
+    <track label="Romanian" kind="subtitles" srclang="ro" src="/resurse/subtitrari/ro.vtt" default>
+    <track label="English" kind="subtitles" srclang="en" src="/resurse/subtitrari/eng.vtt">
+</video>
+
+
+</section>
+
+<hr>
+
+<section class="reflex">
+  <div id="fara-relexie"><i>Citeste mai mult!</i></div>
+  <div id="reflexie"><i>Citeste mai mult!</i></div>
+ 
+</section>
+
+<br><br>
+
+<%- include("../fragmente/footer.ejs") %>
+
+  </body>
+</html>
