@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="resurse/css/nav1000.css" type="text/css" media="screen and (max-width:1000px)" />
   <link rel="stylesheet" href="resurse/css/nav700.css" type="text/css" media="screen and (max-width:700px)" />
-
+  <script type="text/javascript" src="./index.js"></script>
 
  </head>
  <div id="watermark"></div>
@@ -28,9 +28,6 @@
 
   <nav>
 
-    <label id="hamburger" for="ch-menu">
-      <img src="resurse/imagini/more.png" alt="menu">
-    </label>
     <input id="ch-menu" type="checkbox">
     <ul class="meniu">
       <li>
@@ -68,7 +65,8 @@
          <p>Acest site este destinat persoanelor de toate varstele, de la copii pana la adulti, iubitorilor de carti si de literatura. <b>Raftul comun</b> este un site comercial unde gasiti cele mai bune preturi pentru cartile voastre pereferate, atat in format fizic cat si audio.</p>
 
          <p>Genurile de carti de care puteti dispune ce site-ul nostru sunt:</p>
-         <ul>
+        <section id="schimbareCuloare">
+         <ul >
           <li>pentru copii</li>
           <li>romantice</li>
           <li>de stiinta</li>
@@ -76,8 +74,9 @@
            <li>de fictiune</li>
            <li>de actiune</li>
            <li>educative</li>
-
         </ul>
+        </section>
+        <button id="btn" onclick="schimbaCuloareText()">Schimba culoarea listei</button>
 
         <figure>
           <picture>
@@ -132,9 +131,27 @@
     </details>
       </section>
 
-      <section id="calendar">
-        <h2>Calendar</h2>
-        <p>Calendarul nu este inca disponibil pe site!</p>
+      <!--folosirea LocalStorage si inputuri și formulare -->
+      <section id="Username"> 
+        <h2>Formular de înregistrare</h2>
+        <form>
+          <label for="username">Mail:</label>
+          <input type="text" placeholder="example@gmail.com" id="username" name="username">
+
+          <br><br>
+
+          <label for="varsta">Varsta: </label>
+          <input type="date" id="varsta" name="varsta">
+
+
+          <button type="button" id="btnSaveUser" onclick="saveLocalStorage()">Salvează</button>
+          <div id="div1">
+          </div>
+        </form>
+
+
+
+
       </section>
 
       <section id="program">
